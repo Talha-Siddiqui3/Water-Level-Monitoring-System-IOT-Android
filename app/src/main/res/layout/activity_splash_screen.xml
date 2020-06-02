@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SplashScreen"
+    android:background="@color/colorPrimary">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_200sdp"
+        android:layout_centerInParent="true"
+        app:srcCompat="@drawable/home_automation_icon_without_bg"
+        android:tint="@color/colorAccent"
+        android:background="@null"
+        />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="IOT Smart Home"
+        android:layout_below="@id/imageView2"
+        android:layout_centerHorizontal="true"
+        android:textAlignment="center"
+        style="@style/TextBoldLarge" />
+</RelativeLayout>

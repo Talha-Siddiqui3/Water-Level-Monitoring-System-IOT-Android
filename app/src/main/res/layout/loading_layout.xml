@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:id="@+id/loading_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_centerInParent="true"
+    android:animateLayoutChanges="true"
+    android:background="#D9000000"
+    android:clickable="true"
+    android:elevation="@dimen/_8sdp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:elevation="@dimen/_10sdp">
+        <!-- <ProgressBar
+        android:id="@+id/pb"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="visible"
+      />-->
+        <!--android:alpha="0.9"
+            android:background="#DCDCDC"-->
+
+
+        <com.rove.paanisystem.WaveLoadingView
+            android:id="@+id/waveLoadingView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_450sdp"
+            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:elevation="@dimen/_1sdp"
+            android:translationZ="@dimen/_1sdp"
+            app:wlv_borderColor="@color/colorAccent"
+            app:wlv_borderWidth="2dp"
+            app:wlv_progressValue="90"
+            app:wlv_titleCenter="LOADING"
+            app:wlv_titleCenterColor="@color/colorPrimary"
+            app:wlv_titleCenterSize="@dimen/_23ssp"
+            app:wlv_titleCenterStrokeColor="@android:color/holo_blue_dark"
+            app:wlv_titleCenterStrokeWidth="0dp"
+            app:wlv_triangle_direction="north"
+            app:wlv_waveAmplitude="50"
+            app:wlv_waveColor="@color/colorAccent"
+            app:wlv_shapeType="circle"
+            android:scaleX="0.68"
+            android:scaleY="0.68"
+           />
+
+
+    </RelativeLayout>
+</FrameLayout>
