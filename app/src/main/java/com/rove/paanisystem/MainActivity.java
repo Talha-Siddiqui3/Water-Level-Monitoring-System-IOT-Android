@@ -69,10 +69,10 @@ public class MainActivity extends MyBaseClass {
                     // connected=false;
                     ws.close(NORMAL_CLOSURE_STATUS, null);
                     currentClosingOurselves = true;
-                    cu.ToasterShort(MainActivity.this, "Monitoring system stopped successfully :)");
+                    cu.ToasterLong(MainActivity.this, "Monitoring system stopped successfully :)");
                     setNotAvailable();
                 } else {
-                    cu.ToasterShort(MainActivity.this, "Your monitoring system is already stopped");
+                    cu.ToasterLong(MainActivity.this, "Your monitoring system is already stopped");
                 }
             }
         });
@@ -105,22 +105,33 @@ public class MainActivity extends MyBaseClass {
 
 
     private void showOverFlowAlertBox() {
-        if (canPLayAlarm) {
-            canPLayAlarm = false;
-            resetAlarm();
-            startAlarm();
-            showCustomError("WARNING: Water is about to overflow, please turn off your motor.");
-        }
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                if (canPLayAlarm) {
+                    canPLayAlarm = false;
+                    resetAlarm();
+                    startAlarm();
+                    showCustomError("WARNING: Water is about to overflow, please turn off your motor.");
+                }
+            }
+        });
 
     }
 
     private void showWaterLevelTooLowAlertBox() {
-        if (canPLayAlarm) {
-            canPLayAlarm = false;
-            resetAlarm();
-            startAlarm();
-            showCustomError("WARNING: Water levels are too low, please turn on your motor.");
-        }
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                if (canPLayAlarm) {
+                    canPLayAlarm = false;
+                    resetAlarm();
+                    startAlarm();
+                    showCustomError("WARNING: Water levels are too low, please turn on your motor.");
+                }
+            }
+        });
+
     }
 
 
@@ -137,11 +148,12 @@ public class MainActivity extends MyBaseClass {
             public void getDistance(String distance) {
                 String percentage;
                 float currentValue = 0;
-                if (distance.equals("0")) {
-                    percentage = "N/A";
+                if (distance.equals("0.00")) {
+                    percentage = "N/A (Check Sensor!)";
+                    setRedColour();
                 } else {
                     float receivedValueTemp = Float.parseFloat(distance);
-                    //Log.i("ASFDASFASF", String.valueOf(receivedValueTemp));
+                    Log.i("ASFDASFASF", String.valueOf(distance));
                     /*if (receivedValueTemp > MAX_HEIGHT) {
                         receivedValueTemp = MAX_HEIGHT;
                     }

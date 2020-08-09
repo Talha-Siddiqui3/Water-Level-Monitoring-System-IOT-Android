@@ -19,19 +19,19 @@ public class EchoWebSocketListener extends WebSocketListener {
 
     @Override
     public void onMessage(WebSocket webSocket, String text) {
-        requestParamListener.getDistance(text);
+      requestParamListener.getDistance(text);
     }
 
     @Override
     public void onClosing(WebSocket webSocket, int code, String reason) {
         webSocket.close(NORMAL_CLOSURE_STATUS, null);
-        requestParamListener.onDisconnect();
+       requestParamListener.onDisconnect();
 
     }
 
     @Override
     public void onFailure(WebSocket webSocket, Throwable t, Response response) {
-        //Log.i("AFASFASFASF",t.getMessage());
+        Log.i("AFASFASFASF",t.getMessage() + response);
         requestParamListener.onFailure(t.getMessage());
     }
 }
