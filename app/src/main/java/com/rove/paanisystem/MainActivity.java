@@ -137,7 +137,7 @@ public class MainActivity extends MyBaseClass {
 
     private void startWebSocket() {
         client.connectionPool().evictAll();
-        Request request = new Request.Builder().url("ws://192.168.0.103:81/").build();
+        Request request = new Request.Builder().url("ws://192.168.18.20:81/").build();
         listener = new EchoWebSocketListener();
         ws = client.newWebSocket(request, listener);
     }
@@ -146,6 +146,7 @@ public class MainActivity extends MyBaseClass {
         listener.requestParamListener = new RequestParamListener() {
             @Override
             public void getDistance(String distance) {
+                Log.i("asfasfgasgag", distance);
                 String percentage;
                 float currentValue = 0;
                 if (distance.equals("0.00")) {
