@@ -167,7 +167,7 @@ public class MainActivity extends MyBaseClass {
                         setGreenColour();
                     }
 
-                    if (currentValue < 20) {
+                    if (currentValue < 25) {
                         showWaterLevelTooLowAlertBox();
                     }
 
